@@ -13,7 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = RANDOM_PORT)
-public class IndexController {
+public class IndexControllerTest {
 
     @Autowired
     private TestRestTemplate restTemplate;
@@ -24,6 +24,6 @@ public class IndexController {
         String body = this.restTemplate.getForObject("/", String.class);
 
         //then
-        assertThat(body).contains("스프링부트로 시작하는 웹서비스");
+        assertThat(body).contains("스프링부트로 시작하는 웹 서비스");
     }
 }
